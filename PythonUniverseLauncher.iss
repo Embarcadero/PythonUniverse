@@ -21,7 +21,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-OutputDir=\\Mac\Home\Documents\Embarcadero\Studio\Projects\PythonUniverseLauncher\Win32\Release
+OutputDir=.\Win32\Release
 OutputBaseFilename=PythonUniverse
 Compression=lzma
 SolidCompression=yes
@@ -33,7 +33,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "\\Mac\Home\Documents\Embarcadero\Studio\Projects\PythonUniverseLauncher\Win32\Release\PythonUniverseLauncher.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\Win32\Release\PythonUniverseLauncher.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
