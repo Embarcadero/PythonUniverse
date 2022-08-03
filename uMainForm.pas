@@ -21,6 +21,8 @@ type
     CMD: TDosCommand;
     NetHTTPClient: TNetHTTPClient;
     ProgressBar: TProgressBar;
+    PythonComboBox: TComboBox;
+    PyScripterComboBox: TComboBox;
     procedure PyScripterButtonClick(Sender: TObject);
     procedure VideoTutorialsButtonClick(Sender: TObject);
     procedure eBookButtonClick(Sender: TObject);
@@ -36,6 +38,9 @@ type
       const AError: Exception);
     procedure NetHTTPClientReceiveData(const Sender: TObject; AContentLength,
       AReadCount: Int64; var AAbort: Boolean);
+    procedure FormCreate(Sender: TObject);
+    procedure PythonComboBoxSelect(Sender: TObject);
+    procedure PyScripterComboBoxSelect(Sender: TObject);
   private
     { Private declarations }
     FFilename: String;
@@ -72,6 +77,24 @@ begin
   RADStudioButton.Enabled := True;
   DelphiVCLButton.Enabled := True;
   DelphiFMXButton.Enabled := True;
+end;
+
+procedure TMainForm.FormCreate(Sender: TObject);
+begin
+  if (TOSVersion.Architecture = arIntelX86) OR (TOSVersion.Architecture = arARM32) then
+  begin
+    PyScripterComboBox.ItemIndex := 1;
+    PyScripterComboBoxSelect(Self);
+    PythonComboBox.ItemIndex := 1;
+    PythonComboBoxSelect(Self);
+  end
+  else if (TOSVersion.Architecture = arIntelX64) OR (TOSVersion.Architecture = arARM64) then
+  begin
+    PyScripterComboBox.ItemIndex := 0;
+    PyScripterComboBoxSelect(Self);
+    PythonComboBox.ItemIndex := 0;
+    PythonComboBoxSelect(Self);
+  end;
 end;
 
 procedure TMainForm.DisableDownloads;
@@ -142,12 +165,28 @@ end;
 
 procedure TMainForm.PyScripterButtonClick(Sender: TObject);
 begin
-  ASyncInstall(PyScripterButton.Hint,'PyScripter-4.1.1-x86-Setup.exe');
+  ASyncInstall(PyScripterButton.Hint,PyScripterComboBox.Items[PyScripterComboBox.ItemIndex]);
+end;
+
+procedure TMainForm.PyScripterComboBoxSelect(Sender: TObject);
+begin
+  case PyScripterComboBox.ItemIndex of
+    0: PyScripterButton.Hint := 'https://downloads.sourceforge.net/project/pyscripter/PyScripter-v4.1/PyScripter-4.1.1-x64-Setup.exe?ts=gAAAAABi4XeEfUqZrdShsMe5OBMETIOBUawm-Acnu4aloCctvKWgZU3oKmxaw6gKv55Krl7XtwxKLFbElLucIYWyEMi8uKEmOw==&use_mirror=cytranet&r=';
+    1: PyScripterButton.Hint := 'https://downloads.sourceforge.net/project/pyscripter/PyScripter-v4.1/PyScripter-4.1.1-x86-Setup.exe?ts=gAAAAABi2uYQYCvLp4vYops6RnabUoqO6XQxVLbs4a8jnvqCOy_aN7vYeRs9-wO_0F6_8AUfS3_MaxGgSFDPBO8hppFp6APjWA==&use_mirror=versaweb&r=';
+  end;
 end;
 
 procedure TMainForm.PythonButtonClick(Sender: TObject);
 begin
-  ASyncInstall(PythonButton.Hint,'python-3.10.5-amd64.exe');
+  ASyncInstall(PythonButton.Hint,PythonComboBox.Items[PythonComboBox.ItemIndex]);
+end;
+
+procedure TMainForm.PythonComboBoxSelect(Sender: TObject);
+begin
+  case PythonComboBox.ItemIndex of
+    0: PythonButton.Hint := 'https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe';
+    1: PythonButton.Hint := 'https://www.python.org/ftp/python/3.10.5/python-3.10.5.exe';
+  end;
 end;
 
 procedure TMainForm.RADStudioButtonClick(Sender: TObject);

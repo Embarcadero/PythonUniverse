@@ -15,6 +15,7 @@ object MainForm: TMainForm
   Font.Style = []
   Position = poScreenCenter
   ShowHint = True
+  OnCreate = FormCreate
   TextHeight = 15
   object UniverseImage: TImage
     Left = 0
@@ -2651,21 +2652,14 @@ object MainForm: TMainForm
       48E69B8A0F00D218DE69ADD3DE9E0657268ED46E48C45217A53B1EB41E942FCC
       707A7B52D87B0A085E4D1BCFF08A460147148393CD303FFFD9}
     Stretch = True
-    ExplicitLeft = 352
-    ExplicitTop = 152
-    ExplicitWidth = 960
-    ExplicitHeight = 540
+    ExplicitLeft = 72
+    ExplicitTop = 80
   end
   object PyScripterButton: TButton
-    Left = 112
+    Left = 328
     Top = 312
-    Width = 313
+    Width = 97
     Height = 33
-    Hint = 
-      'https://downloads.sourceforge.net/project/pyscripter/PyScripter-' +
-      'v4.1/PyScripter-4.1.1-x86-Setup.exe?ts=gAAAAABi2uYQYCvLp4vYops6R' +
-      'nabUoqO6XQxVLbs4a8jnvqCOy_aN7vYeRs9-wO_0F6_8AUfS3_MaxGgSFDPBO8hp' +
-      'pFp6APjWA==&use_mirror=versaweb&r='
     Caption = 'Install PyScripter'
     TabOrder = 0
     OnClick = PyScripterButtonClick
@@ -2695,11 +2689,10 @@ object MainForm: TMainForm
     OnClick = eBookButtonClick
   end
   object PythonButton: TButton
-    Left = 112
+    Left = 328
     Top = 273
-    Width = 313
+    Width = 97
     Height = 33
-    Hint = 'https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe'
     Caption = 'Install Python'
     TabOrder = 3
     OnClick = PythonButtonClick
@@ -2743,6 +2736,30 @@ object MainForm: TMainForm
     Height = 17
     TabOrder = 7
     Visible = False
+  end
+  object PythonComboBox: TComboBox
+    Left = 112
+    Top = 278
+    Width = 210
+    Height = 23
+    Style = csDropDownList
+    TabOrder = 8
+    OnSelect = PythonComboBoxSelect
+    Items.Strings = (
+      'python-3.10.5-amd64.exe'
+      'python-3.10.5.exe')
+  end
+  object PyScripterComboBox: TComboBox
+    Left = 112
+    Top = 317
+    Width = 210
+    Height = 23
+    Style = csDropDownList
+    TabOrder = 9
+    OnSelect = PyScripterComboBoxSelect
+    Items.Strings = (
+      'PyScripter-4.1.1-x64-Setup.exe'
+      'PyScripter-4.1.1-x86-Setup.exe')
   end
   object CMD: TDosCommand
     InputToOutput = False
