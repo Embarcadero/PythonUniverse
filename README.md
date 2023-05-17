@@ -39,3 +39,5 @@ Ready to get started?
 With PythonUniverse, Python programmers are no longer left behind when it comes to GUI development. By providing a simplified setup process and a suite of powerful tools and resources, PythonUniverse empowers Python developers to create visually stunning and high-performance GUI applications with ease.
 
 Whether you're a seasoned Python developer or just starting your coding journey, PythonUniverse is a game-changer. It allows you to leverage the power and flexibility of Python while also tapping into the visual design capabilities of Delphi. Give it a try and elevate your Python GUI development process to new heights!
+
+[Download the latest release](https://github.com/Embarcadero/PythonUniverse/releases)
