@@ -2657,7 +2657,7 @@ object MainForm: TMainForm
   end
   object PyScripterButton: TButton
     Left = 328
-    Top = 312
+    Top = 272
     Width = 97
     Height = 33
     Caption = 'Install PyScripter'
@@ -2666,7 +2666,7 @@ object MainForm: TMainForm
   end
   object VideoTutorialsButton: TButton
     Left = 112
-    Top = 351
+    Top = 311
     Width = 313
     Height = 33
     Hint = 
@@ -2678,7 +2678,7 @@ object MainForm: TMainForm
   end
   object eBookButton: TButton
     Left = 112
-    Top = 390
+    Top = 350
     Width = 313
     Height = 33
     Hint = 
@@ -2690,7 +2690,7 @@ object MainForm: TMainForm
   end
   object PythonButton: TButton
     Left = 328
-    Top = 273
+    Top = 233
     Width = 97
     Height = 33
     Caption = 'Install Python'
@@ -2705,13 +2705,13 @@ object MainForm: TMainForm
     Hint = 
       'https://www.embarcadero.com/products/rad-studio/start-for-free?u' +
       'tm_source=launcher&utm_medium=link&utm_campaign=python'
-    Caption = 'Install RAD Studio To Visually Design Python Apps'
+    Caption = #10024' Install RAD Studio To Visually Design Python Apps'
     TabOrder = 4
     OnClick = RADStudioButtonClick
   end
   object DelphiVCLButton: TButton
     Left = 112
-    Top = 429
+    Top = 388
     Width = 154
     Height = 33
     Hint = 'pip install delphivcl'
@@ -2721,7 +2721,7 @@ object MainForm: TMainForm
   end
   object DelphiFMXButton: TButton
     Left = 272
-    Top = 430
+    Top = 389
     Width = 153
     Height = 33
     Hint = 'pip install delphifmx'
@@ -2739,27 +2739,41 @@ object MainForm: TMainForm
   end
   object PythonComboBox: TComboBox
     Left = 112
-    Top = 278
+    Top = 238
     Width = 210
     Height = 23
     Style = csDropDownList
     TabOrder = 8
     OnSelect = PythonComboBoxSelect
     Items.Strings = (
+      'python-3.11.3-amd64.exe'
+      'python-3.11.3.exe'
+      'python-3.10.11-amd64.exe'
+      'python-3.10.11.exe'
       'python-3.10.5-amd64.exe'
       'python-3.10.5.exe')
   end
   object PyScripterComboBox: TComboBox
     Left = 112
-    Top = 317
+    Top = 277
     Width = 210
     Height = 23
     Style = csDropDownList
     TabOrder = 9
     OnSelect = PyScripterComboBoxSelect
     Items.Strings = (
-      'PyScripter-4.1.1-x64-Setup.exe'
-      'PyScripter-4.1.1-x86-Setup.exe')
+      'PyScripter-4.2.5-x64-Setup.exe'
+      'PyScripter-4.2.5-x86-Setup.exe')
+  end
+  object PythonGUIButton: TButton
+    Left = 112
+    Top = 427
+    Width = 313
+    Height = 33
+    Hint = 'https://pythongui.org/'
+    Caption = 'PythonGUI.org - Tutorials, Examples, And More'
+    TabOrder = 10
+    OnClick = PythonGUIButtonClick
   end
   object CMD: TDosCommand
     InputToOutput = False

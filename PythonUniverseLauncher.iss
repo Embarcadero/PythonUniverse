@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Embarcadero Python Universe Launcher"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.02"
 #define MyAppPublisher "Embarcadero Technologies"
 #define MyAppURL "https://www.embarcadero.com/"
 #define MyAppExeName "PythonUniverseLauncher.exe"
