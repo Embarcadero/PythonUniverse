@@ -1,7 +1,7 @@
 # PythonUniverse
 Embarcadero's Python Universe Installer
 
-![PythonUniverseLauncher](https://user-images.githubusercontent.com/821930/181061993-4b27dcf9-6d00-4234-a5a0-a2160992dbb7.png)
+![PythonUniverseLauncher](/images/PythonUniverseLauncher.png)
 
 Simplifies the installation of 
 * The latest Python
