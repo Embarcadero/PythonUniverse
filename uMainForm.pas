@@ -119,13 +119,13 @@ end;
 
 procedure TMainForm.DelphiFMXButtonClick(Sender: TObject);
 begin
-  CMD.CommandLine := 'cmd /c "'+DelphiFMXButton.Hint+'"';
+  CMD.CommandLine := 'cmd /c "python -m '+DelphiFMXButton.Hint+'"';
   CMD.Execute;
 end;
 
 procedure TMainForm.DelphiVCLButtonClick(Sender: TObject);
 begin
-  CMD.CommandLine := 'cmd /c "'+DelphiVCLButton.Hint+'"';
+  CMD.CommandLine := 'cmd /c "python -m '+DelphiVCLButton.Hint+'"';
   CMD.Execute;
 end;
 
