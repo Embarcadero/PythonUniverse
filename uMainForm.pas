@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg,
   Vcl.ExtCtrls, DosCommand, System.Net.URLClient, System.Net.HttpClient,
-  System.Net.HttpClientComponent, Vcl.ComCtrls, System.IOUtils;
+  System.Net.HttpClientComponent, Vcl.ComCtrls, System.IOUtils, Registry;
 
 type
   TMainForm = class(TForm)
@@ -24,6 +24,7 @@ type
     PythonComboBox: TComboBox;
     PyScripterComboBox: TComboBox;
     PythonGUIButton: TButton;
+    ConsoleMemo: TMemo;
     procedure PyScripterButtonClick(Sender: TObject);
     procedure VideoTutorialsButtonClick(Sender: TObject);
     procedure eBookButtonClick(Sender: TObject);
@@ -43,6 +44,8 @@ type
     procedure PythonComboBoxSelect(Sender: TObject);
     procedure PyScripterComboBoxSelect(Sender: TObject);
     procedure PythonGUIButtonClick(Sender: TObject);
+    procedure CMDNewLine(ASender: TObject; const ANewLine: string;
+      AOutputType: TOutputType);
   private
     { Private declarations }
     FFilename: String;
@@ -59,6 +62,51 @@ var
 implementation
 
 {$R *.dfm}
+
+function ReadPythonPath(RegistryKey: String): String;
+var
+  Reg: TRegistry;
+begin
+  Reg := TRegistry.Create(KEY_READ);
+  try
+    Reg.RootKey := HKEY_CURRENT_USER;
+
+    if Reg.OpenKey(RegistryKey, False) then
+    begin
+      try
+        if Reg.ValueExists('InstallPath') then
+        begin
+          Result := Reg.ReadString('InstallPath');
+        end
+        else
+          Result := '';
+      finally
+        Reg.CloseKey;
+      end;
+    end
+    else
+      Result := '';
+  finally
+    Reg.Free;
+  end;
+
+end;
+
+function GetPythonPath: String;
+begin
+  var InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.11');
+  if InstallPath='' then
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.10');
+  if InstallPath='' then
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.9');
+  if InstallPath='' then
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.8');
+  if InstallPath='' then
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.7');
+  if InstallPath='' then
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.6');
+  Result := InstallPath;
+end;
 
 procedure TMainForm.AsyncInstall(AURL: string; AFilename: string);
 begin
@@ -79,6 +127,7 @@ begin
   RADStudioButton.Enabled := True;
   DelphiVCLButton.Enabled := True;
   DelphiFMXButton.Enabled := True;
+  PythonGUIButton.Enabled := True;
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
@@ -108,6 +157,7 @@ begin
   RADStudioButton.Enabled := False;
   DelphiVCLButton.Enabled := False;
   DelphiFMXButton.Enabled := False;
+  PythonGUIButton.Enabled := False;
   ProgressBar.Visible := True;
 end;
 
@@ -117,15 +167,23 @@ begin
   CMD.Execute;
 end;
 
+procedure TMainForm.CMDNewLine(ASender: TObject; const ANewLine: string;
+  AOutputType: TOutputType);
+begin
+  ConsoleMemo.Lines.Append(ANewLine);
+end;
+
 procedure TMainForm.DelphiFMXButtonClick(Sender: TObject);
 begin
-  CMD.CommandLine := 'cmd /c "python -m '+DelphiFMXButton.Hint+'"';
+  ConsoleMemo.Visible := True;
+  CMD.CommandLine := 'cmd /c "'+GetPythonPath+'python -m '+DelphiFMXButton.Hint+'"';
   CMD.Execute;
 end;
 
 procedure TMainForm.DelphiVCLButtonClick(Sender: TObject);
 begin
-  CMD.CommandLine := 'cmd /c "python -m '+DelphiVCLButton.Hint+'"';
+  ConsoleMemo.Visible := True;
+  CMD.CommandLine := 'cmd /c "'+GetPythonPath+'python -m '+DelphiVCLButton.Hint+'"';
   CMD.Execute;
 end;
 

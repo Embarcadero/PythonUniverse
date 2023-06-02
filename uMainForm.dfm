@@ -2734,6 +2734,10 @@ object MainForm: TMainForm
     Top = 508
     Width = 313
     Height = 17
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
+    Smooth = True
+    Style = pbstMarquee
     TabOrder = 7
     Visible = False
   end
@@ -2775,10 +2779,21 @@ object MainForm: TMainForm
     TabOrder = 10
     OnClick = PythonGUIButtonClick
   end
+  object ConsoleMemo: TMemo
+    Left = 440
+    Top = 233
+    Width = 489
+    Height = 269
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 11
+    Visible = False
+  end
   object CMD: TDosCommand
     InputToOutput = False
     MaxTimeAfterBeginning = 0
     MaxTimeAfterLastOutput = 0
+    OnNewLine = CMDNewLine
     Left = 16
     Top = 16
   end
