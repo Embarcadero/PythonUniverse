@@ -8,6 +8,7 @@ object MainForm: TMainForm
   ClientHeight = 539
   ClientWidth = 959
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -2734,7 +2735,7 @@ object MainForm: TMainForm
     Top = 508
     Width = 313
     Height = 17
-    DoubleBuffered = True
+    DoubleBuffered = False
     ParentDoubleBuffered = False
     Smooth = True
     Style = pbstMarquee

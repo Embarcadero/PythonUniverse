@@ -74,9 +74,9 @@ begin
     if Reg.OpenKey(RegistryKey, False) then
     begin
       try
-        if Reg.ValueExists('InstallPath') then
+        if Reg.ValueExists('') then
         begin
-          Result := Reg.ReadString('InstallPath');
+          Result := Reg.ReadString('');
         end
         else
           Result := '';
@@ -94,17 +94,17 @@ end;
 
 function GetPythonPath: String;
 begin
-  var InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.11');
+  var InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.11\InstallPath');
   if InstallPath='' then
-    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.10');
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.10\InstallPath');
   if InstallPath='' then
-    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.9');
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.9\InstallPath');
   if InstallPath='' then
-    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.8');
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.8\InstallPath');
   if InstallPath='' then
-    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.7');
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.7\InstallPath');
   if InstallPath='' then
-    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.6');
+    InstallPath := ReadPythonPath('\SOFTWARE\Python\PythonCore\3.6\InstallPath');
   Result := InstallPath;
 end;
 
