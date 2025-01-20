@@ -237,8 +237,8 @@ end;
 procedure TMainForm.PyScripterComboBoxSelect(Sender: TObject);
 begin
   case PyScripterComboBox.ItemIndex of
-    0: PyScripterButton.Hint := 'https://downloads.sourceforge.net/project/pyscripter/PyScripter-v4.2/PyScripter-4.2.5-x64-Setup.exe?ts=gAAAAABkZRVS7pmQa1H5KZU4j6ceDjzYW9Amh5qeDpuH_KhrXaDPBs3KuZ5kmWJqUutPvC_S7xru9PkhdUu-jV7nFWXzlu9RFg%3D%3D&use_mirror=gigenet&r=';
-    1: PyScripterButton.Hint := 'https://downloads.sourceforge.net/project/pyscripter/PyScripter-v4.2/PyScripter-4.2.5-x86-Setup.exe?ts=gAAAAABkZRXPGyi6Sb5fBk3euOs1lZuIlG6ljIHq_EW3bs2NETTw2Ti9fVnYuEmaSFaocd9eSawhQsTSAwWTZVtwTbDwWM-SgA%3D%3D&use_mirror=versaweb&r=';
+    0: PyScripterButton.Hint := 'https://downloads.sourceforge.net/project/pyscripter/PyScripter-v5.1/PyScripter-5.1.3-x64-Setup.exe?ts=gAAAAABkZRVS7pmQa1H5KZU4j6ceDjzYW9Amh5qeDpuH_KhrXaDPBs3KuZ5kmWJqUutPvC_S7xru9PkhdUu-jV7nFWXzlu9RFg%3D%3D&use_mirror=gigenet&r=';
+    1: PyScripterButton.Hint := 'https://downloads.sourceforge.net/project/pyscripter/PyScripter-v5.1/PyScripter-5.1.3-x86-Setup.exe?ts=gAAAAABkZRXPGyi6Sb5fBk3euOs1lZuIlG6ljIHq_EW3bs2NETTw2Ti9fVnYuEmaSFaocd9eSawhQsTSAwWTZVtwTbDwWM-SgA%3D%3D&use_mirror=versaweb&r=';
   end;
 end;
 
@@ -250,12 +250,12 @@ end;
 procedure TMainForm.PythonComboBoxSelect(Sender: TObject);
 begin
   case PythonComboBox.ItemIndex of
-    0: PythonButton.Hint := 'https://www.python.org/ftp/python/3.11.3/python-3.11.3-amd64.exe';
-    1: PythonButton.Hint := 'https://www.python.org/ftp/python/3.11.3/python-3.11.3.exe';
-    3: PythonButton.Hint := 'https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe';
-    4: PythonButton.Hint := 'https://www.python.org/ftp/python/3.10.11/python-3.10.11.exe';
-    5: PythonButton.Hint := 'https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe';
-    6: PythonButton.Hint := 'https://www.python.org/ftp/python/3.10.5/python-3.10.5.exe';
+    0: PythonButton.Hint := 'https://www.python.org/ftp/python/3.14.0/python-3.14.0a4-amd64.exe';
+    1: PythonButton.Hint := 'https://www.python.org/ftp/python/3.14.0/python-3.14.0a4.exe';
+    3: PythonButton.Hint := 'https://www.python.org/ftp/python/3.11.3/python-3.11.3-amd64.exe';
+    4: PythonButton.Hint := 'https://www.python.org/ftp/python/3.11.3/python-3.11.3.exe';
+    5: PythonButton.Hint := 'https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe';
+    6: PythonButton.Hint := 'https://www.python.org/ftp/python/3.10.11/python-3.10.11.exe';
   end;
 end;
 

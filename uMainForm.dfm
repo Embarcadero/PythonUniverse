@@ -11,13 +11,13 @@ object MainForm: TMainForm
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -12
+  Font.Height = -16
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
   ShowHint = True
   OnCreate = FormCreate
-  TextHeight = 15
+  TextHeight = 21
   object UniverseImage: TImage
     Left = 0
     Top = 0
@@ -2658,18 +2658,18 @@ object MainForm: TMainForm
   end
   object PyScripterButton: TButton
     Left = 328
-    Top = 272
-    Width = 97
-    Height = 33
+    Top = 236
+    Width = 140
+    Height = 40
     Caption = 'Install PyScripter'
     TabOrder = 0
     OnClick = PyScripterButtonClick
   end
   object VideoTutorialsButton: TButton
-    Left = 112
-    Top = 311
-    Width = 313
-    Height = 33
+    Left = 23
+    Top = 282
+    Width = 417
+    Height = 40
     Hint = 
       'https://www.youtube.com/playlist?list=PLwUPJvR9mZHhtW2q12PpuFhEH' +
       'abUlN1Po'
@@ -2678,10 +2678,10 @@ object MainForm: TMainForm
     OnClick = VideoTutorialsButtonClick
   end
   object eBookButton: TButton
-    Left = 112
-    Top = 350
-    Width = 313
-    Height = 33
+    Left = 23
+    Top = 327
+    Width = 417
+    Height = 40
     Hint = 
       'https://img.en25.com/Web/Embarcadero/{b19ca5b1-8a46-4c7a-9a2f-84' +
       '3f8221c318}_Getting_Started_with_Python_GUI_Development.pdf'
@@ -2691,18 +2691,18 @@ object MainForm: TMainForm
   end
   object PythonButton: TButton
     Left = 328
-    Top = 233
-    Width = 97
-    Height = 33
+    Top = 191
+    Width = 140
+    Height = 40
     Caption = 'Install Python'
     TabOrder = 3
     OnClick = PythonButtonClick
   end
   object RADStudioButton: TButton
-    Left = 112
-    Top = 469
-    Width = 313
-    Height = 33
+    Left = 23
+    Top = 464
+    Width = 417
+    Height = 40
     Hint = 
       'https://www.embarcadero.com/products/rad-studio/start-for-free?u' +
       'tm_source=launcher&utm_medium=link&utm_campaign=python'
@@ -2711,29 +2711,29 @@ object MainForm: TMainForm
     OnClick = RADStudioButtonClick
   end
   object DelphiVCLButton: TButton
-    Left = 112
-    Top = 388
+    Left = 23
+    Top = 373
     Width = 154
-    Height = 33
+    Height = 40
     Hint = 'pip install delphivcl'
     Caption = 'Install DelphiVCL'
     TabOrder = 5
     OnClick = DelphiVCLButtonClick
   end
   object DelphiFMXButton: TButton
-    Left = 272
-    Top = 389
+    Left = 287
+    Top = 373
     Width = 153
-    Height = 33
+    Height = 40
     Hint = 'pip install delphifmx'
     Caption = 'Install DelphiFMX'
     TabOrder = 6
     OnClick = DelphiFMXButtonClick
   end
   object ProgressBar: TProgressBar
-    Left = 112
+    Left = 23
     Top = 508
-    Width = 313
+    Width = 417
     Height = 17
     DoubleBuffered = False
     ParentDoubleBuffered = False
@@ -2743,48 +2743,54 @@ object MainForm: TMainForm
     Visible = False
   end
   object PythonComboBox: TComboBox
-    Left = 112
-    Top = 238
-    Width = 210
-    Height = 23
+    Left = 23
+    Top = 197
+    Width = 300
+    Height = 29
     Style = csDropDownList
     TabOrder = 8
     OnSelect = PythonComboBoxSelect
     Items.Strings = (
+      'python-3.14.0a4-amd64.exe'
+      'python-3.14.0a4.exe'
       'python-3.11.3-amd64.exe'
       'python-3.11.3.exe'
-      'python-3.10.11-amd64.exe'
-      'python-3.10.11.exe'
-      'python-3.10.5-amd64.exe'
-      'python-3.10.5.exe')
+      'ython-3.10.11-amd64.exe'
+      'python-3.10.11.exe')
   end
   object PyScripterComboBox: TComboBox
-    Left = 112
-    Top = 277
-    Width = 210
-    Height = 23
+    Left = 23
+    Top = 242
+    Width = 300
+    Height = 29
     Style = csDropDownList
     TabOrder = 9
     OnSelect = PyScripterComboBoxSelect
     Items.Strings = (
-      'PyScripter-4.2.5-x64-Setup.exe'
-      'PyScripter-4.2.5-x86-Setup.exe')
+      'PyScripter-5.1.3-x64-Setup.exe'
+      'PyScripter-5.1.3-x86-Setup.exe')
   end
   object PythonGUIButton: TButton
-    Left = 112
-    Top = 427
-    Width = 313
-    Height = 33
+    Left = 23
+    Top = 418
+    Width = 417
+    Height = 40
     Hint = 'https://pythongui.org/'
     Caption = 'PythonGUI.org - Tutorials, Examples, And More'
     TabOrder = 10
     OnClick = PythonGUIButtonClick
   end
   object ConsoleMemo: TMemo
-    Left = 440
-    Top = 233
-    Width = 489
-    Height = 269
+    Left = 478
+    Top = 197
+    Width = 465
+    Height = 307
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 11
