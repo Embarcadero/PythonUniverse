@@ -41,3 +41,5 @@ With PythonUniverse, Python programmers are no longer left behind when it comes 
 Whether you're a seasoned Python developer or just starting your coding journey, PythonUniverse is a game-changer. It allows you to leverage the power and flexibility of Python while also tapping into the visual design capabilities of Delphi. Give it a try and elevate your Python GUI development process to new heights!
 
 [Download the latest release](https://github.com/Embarcadero/PythonUniverse/releases)
+(*Please note this project was sponsored by Time Systems and the installer is code-signed by them*).
+

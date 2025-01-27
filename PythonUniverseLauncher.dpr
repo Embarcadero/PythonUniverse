@@ -1,11 +1,6 @@
 program PythonUniverseLauncher;
 
 uses
-  madExcept,
-  madLinkDisAsm,
-  madListHardware,
-  madListProcesses,
-  madListModules,
   Vcl.Forms,
   uMainForm in 'uMainForm.pas' {MainForm},
   Vcl.Themes,
